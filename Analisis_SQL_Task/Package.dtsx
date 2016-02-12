@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{F2501D92-DB31-4C71-9C1A-FABF1A889B12}">
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{F9674FE0-EFFD-41E5-8401-00ED545F8744}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,6 +38,16 @@
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B80E8987-2D05-4BEF-900A-5C8580E7DB86}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="error">
+      <DTS:VariableValue
+        DTS:DataType="1"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{73083EB3-484E-4CBF-830A-A2D61585F0F5}"
@@ -114,10 +124,28 @@
       DTS:refId="Package\Execute SQL Task"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{04CBAEBE-2803-4D19-96A2-1D0FC366EA52}"
+      DTS:Disabled="True"
+      DTS:DTSID="{433DDF35-A2D6-4DF8-82C5-24DFBF9E1657}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{44F46FD0-35B9-4C8E-B852-1513DDAA3C5D}"
+          SQLTask:SqlStatementSource="SELECT        TipoBombillo&#xA;FROM            PreguntaUno&#xA;WHERE        (VoltajeMinimo &lt;= 20) AND (VoltajeMaximo &gt;= 20)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\getBombilloReal"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{04CBAEBE-2803-4D19-96A2-1D0FC366EA52}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="getBombilloReal"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -136,6 +164,12 @@
             SQLTask:DtsVariableName="User::TipoBombilloReal"
             SQLTask:ParameterDirection="Output"
             SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@error"
+            SQLTask:DtsVariableName="User::error"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="13"
             SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
@@ -182,7 +216,7 @@
       DTS:From="Package\Insert Registros"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Execute SQL Task" />
+      DTS:To="Package\getBombilloReal" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -254,22 +288,34 @@
         </EdgeLayout>
         <NodeLayout
           Size="163,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="451,108" />
+          Id="Package\getBombilloReal"
+          TopLeft="547,114" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="534,66">
+          TopLeft="535.5,66">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42"
+              EndConnector="93,48"
               Start="0,0"
-              End="0,34.5">
+              End="93,40.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
+                    End="0,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="4,24" />
+                  <mssgle:LineSegment
+                    End="89,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="89,24"
+                    Point2="93,24"
+                    Point3="93,28" />
+                  <mssgle:LineSegment
+                    End="93,40.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -278,6 +324,10 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="22,173" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
