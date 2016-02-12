@@ -1,6 +1,3 @@
-DECLARE @resultado int; 
-SELECT        @resultado = TipoBombillo
+SELECT        TipoBombillo
 FROM            PreguntaUno
-WHERE        (VoltajeMinimo <= @voltaje) AND (VoltajeMaximo >= @voltaje)
-
-CASE WHEN (@resultado IS NULL) THEN @error = @resultado ELSE @bombillo = @resultado END
+WHERE        (VoltajeMinimo <= ?) AND (VoltajeMaximo >= ?)
