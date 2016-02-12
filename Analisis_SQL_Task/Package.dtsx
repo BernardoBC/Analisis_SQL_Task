@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{449EEDD9-6877-40AE-B71D-2BE04B357B33}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{B8A40906-FDA8-4AB8-9630-7CD0B0F4A8FF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,7 @@
       DTS:ObjectName="BERNARDO">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=BERNARDO;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=BERNARDO;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Initial File Name=C:\Users\Bernardo Bonilla\AppData\Local\Microsoft\VisualStudio\SSDT\Analisis_SQL_Tasks.mdf;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
