@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{B8A40906-FDA8-4AB8-9630-7CD0B0F4A8FF}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{75731236-F4FB-471B-9A5A-53C2855DDDBA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,7 @@
       DTS:ObjectName="BERNARDO">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=BERNARDO;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Initial File Name=C:\Users\Bernardo Bonilla\AppData\Local\Microsoft\VisualStudio\SSDT\Analisis_SQL_Tasks.mdf;" />
+          DTS:ConnectionString="Data Source=BERNARDO;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -97,7 +97,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{44F46FD0-35B9-4C8E-B852-1513DDAA3C5D}"
-          SQLTask:SqlStatementSource="DROP TABLE PreguntaUno" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="DROP TABLE dbo.PreguntaUno" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>

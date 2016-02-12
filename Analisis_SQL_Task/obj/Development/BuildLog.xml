@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Analisis_SQL_Task</Name>
-    <LastWriteTime>2016-02-12T14:36:57.2337314Z</LastWriteTime>
+    <LastWriteTime>2016-02-12T17:29:18.6341811Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Package.dtsx</Name>
-      <LastWriteTime>2016-02-12T14:36:43.7223397Z</LastWriteTime>
+      <LastWriteTime>2016-02-12T17:29:18.5451347Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
