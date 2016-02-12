@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="2/11/2016 8:24:27 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{8C58F17F-A733-4536-8AB5-3EB6EC00C74A}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{7C187EEC-0C1D-40A6-AD7B-36A53CB45039}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -67,13 +67,13 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Crear PreguntaUno"
+      DTS:refId="Package\Drop Table PreguntaUno"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{E888C2CB-E8F2-41E4-927D-6C4E8C1AFAA0}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Crear PreguntaUno"
+      DTS:ObjectName="Drop Table PreguntaUno"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -97,9 +97,9 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="169,42"
-          Id="Package\Crear PreguntaUno"
-          TopLeft="264,88" />
+          Size="195,42"
+          Id="Package\Drop Table PreguntaUno"
+          TopLeft="114,49" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
