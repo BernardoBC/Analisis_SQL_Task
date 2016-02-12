@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="68"
-  DTS:VersionGUID="{0E8D33B3-AA46-4306-ACC6-EE9D70355831}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{4F9DFB58-5CCD-43BC-8071-75CB983712E7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -43,10 +43,18 @@
       DTS:DTSID="{B80E8987-2D05-4BEF-900A-5C8580E7DB86}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="error">
+      DTS:ObjectName="resultado">
       <DTS:VariableValue
-        DTS:DataType="1"
-        xml:space="preserve"></DTS:VariableValue>
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -82,7 +90,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="VoltajeMedido">
       <DTS:VariableValue
-        DTS:DataType="5">22.</DTS:VariableValue>
+        DTS:DataType="5">20.</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -117,17 +125,17 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{44F46FD0-35B9-4C8E-B852-1513DDAA3C5D}"
-          SQLTask:SqlStatementSource="DROP TABLE dbo.PreguntaUno" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT        *&#xA;FROM            PreguntaUno)&#xA;DROP TABLE dbo.PreguntaUno" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute SQL Task"
+      DTS:refId="Package\getBombilloReal"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{433DDF35-A2D6-4DF8-82C5-24DFBF9E1657}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task"
+      DTS:ObjectName="getBombilloReal"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -135,10 +143,10 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{44F46FD0-35B9-4C8E-B852-1513DDAA3C5D}"
           SQLTask:SqlStatementSource="SELECT        TipoBombillo&#xA;FROM            PreguntaUno&#xA;WHERE        (VoltajeMinimo &lt;= ?) AND (VoltajeMaximo &gt;= ?)"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
-            SQLTask:DtsVariableName="User::TipoBombilloReal" />
+            SQLTask:DtsVariableName="User::resultado" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::VoltajeMedido"
@@ -196,7 +204,7 @@
       DTS:From="Package\Insert Registros"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\Execute SQL Task" />
+      DTS:To="Package\getBombilloReal" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -267,35 +275,35 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="163,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="326,115" />
+          Size="154,42"
+          Id="Package\getBombilloReal"
+          TopLeft="448,103" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="509.666666666667,66">
+          TopLeft="535.5,66">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-102.166666666667,49"
+              EndConnector="-10.5,37"
               Start="0,0"
-              End="-102.166666666667,41.5">
+              End="-10.5,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.8857837181045" />
+                    End="0,14.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.8857837181045"
-                    Point2="0,19.8857837181045"
-                    Point3="-4,19.8857837181045" />
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="-4,18.5" />
                   <mssgle:LineSegment
-                    End="-98.1666666666667,19.8857837181045" />
+                    End="-6.5,18.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-98.1666666666667,19.8857837181045"
-                    Point2="-102.166666666667,19.8857837181045"
-                    Point3="-102.166666666667,23.8857837181045" />
+                    Point1="-6.5,18.5"
+                    Point2="-10.5,18.5"
+                    Point3="-10.5,22.5" />
                   <mssgle:LineSegment
-                    End="-102.166666666667,41.5" />
+                    End="-10.5,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
