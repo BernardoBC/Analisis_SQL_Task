@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ROOT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="row">
+          <xs:complexType>
+            <xs:attribute name="AddressID" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="City" type="xs:string" use="optional" />
+            <xs:attribute name="StateProvinceID" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="PostalCode" type="xs:unsignedInt" use="optional" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

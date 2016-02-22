@@ -1,0 +1,476 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/16/2016 10:36:06 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="BERNARDO"
+  DTS:CreatorName="BERNARDO\Bernardo Bonilla"
+  DTS:DTSID="{679E9426-4302-4D39-9403-B65B76948E9E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.2430.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="64"
+  DTS:VersionGUID="{97159772-6AF7-45D0-905A-DF95E2750F02}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BERNARDO.Analisis_SQLTask]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9DF8E3A7-EA49-4D94-AD3A-52D532B5042A}"
+      DTS:ObjectName="BERNARDO.Analisis_SQLTask">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=BERNARDO;Initial Catalog=Analisis_SQLTask;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BERNARDO.Analisis_SQLTask1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{5FF8F7CA-3BCE-4AA8-941E-B9466C0CB5AF}"
+      DTS:ObjectName="BERNARDO.Analisis_SQLTask1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=BERNARDO;Initial Catalog=Analisis_SQLTask;Integrated Security=True;Application Name=SSIS-Package-{5FF8F7CA-3BCE-4AA8-941E-B9466C0CB5AF}BERNARDO.Analisis_SQLTask1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A5C66B86-8DA3-4376-B810-EC0908D4C349}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MensajeError">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EFB33AAB-CC6E-4B3E-B652-D0D37662D694}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MensajeSalida">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{82DB73DA-25AB-4D26-B544-D2A449BC0AD5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="SerieBombillo">
+      <DTS:VariableValue
+        DTS:DataType="3">123</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6ACC5130-F8BB-4D9B-A214-133D88E28990}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="TipoBombilloPropuesto">
+      <DTS:VariableValue
+        DTS:DataType="3">17</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A6397BA3-2743-4AEC-88A2-2C2DCA70B5AC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="TipoBombilloReal">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{04A40C83-B448-4B49-BD0F-4DC3DAF0DF65}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="VoltajeMedido">
+      <DTS:VariableValue
+        DTS:DataType="5">30.</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Crear Tabla"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1FC8C7FF-795F-4DD6-9A2B-1F4D4D51FA0F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Crear Tabla"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9DF8E3A7-EA49-4D94-AD3A-52D532B5042A}"
+          SQLTask:SqlStatementSource="CREATE TABLE PreguntaUno&#xA;(&#xA;TipoBombillo INT not Null primary key,&#xA;Descripcion VARCHAR(30),&#xA;VoltajeMaximo DOUBLE PRECISION,&#xA;VoltajeMinimo DOUBLE PRECISION&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DropTable"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B580727A-C5F1-4040-9651-E1B17357AA10}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DropTable"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9DF8E3A7-EA49-4D94-AD3A-52D532B5042A}"
+          SQLTask:SqlStatementSource="IF OBJECT_ID('dbo.PreguntaUno', 'U') IS NOT NULL &#xA;  DROP TABLE dbo.PreguntaUno; " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A87736EE-BFEE-474A-94C1-B8779805C30E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5FF8F7CA-3BCE-4AA8-941E-B9466C0CB5AF}"
+          SQLTask:SqlStatementSource="DECLARE @volMinReal as numeric;&#xA;DECLARE @volMaxReal as numeric;&#xA;DECLARE @volMinPropuesto as numeric;&#xA;DECLARE @volMaxPropuesto as numeric;&#xA;&#xA;IF (@bombilloReal=@bombilloPropuesto)&#xA;BEGIN&#xA;&#x9;SELECT&#x9;@volMinPropuesto=VoltajeMinimo,@volMaxPropuesto=VoltajeMaximo&#xA;&#x9;&#x9;FROM&#x9;PreguntaUno&#xA;&#x9;&#x9;WHERE&#x9;TipoBombillo=@bombilloReal;&#xA;&#x9;&#x9;SELECT @salida=CONCAT&#xA;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;'El bombillo con serie ',&#xA;&#x9;&#x9;&#x9;CONVERT(varchar, @serie),&#xA;&#x9;&#x9;&#x9;' y voltaje Medido de ',&#xA;&#x9;&#x9;&#x9;CONVERT(varchar, @voltaje),&#xA;&#x9;&#x9;&#x9;' watts coincide con el tipo de bombillo propuesto (',&#xA;&#x9;&#x9;&#x9;CONVERT(varchar, @bombilloPropuesto),&#xA;&#x9;&#x9;&#x9;'), el cual se ubica en el rango de ',&#xA;&#x9;&#x9;&#x9;CONVERT(varchar, @volMinPropuesto),&#xA;&#x9;&#x9;&#x9;' watts hasta ',&#xA;&#x9;&#x9;&#x9;CONVERT(varchar, @volMaxPropuesto),&#xA;&#x9;&#x9;&#x9;' watts' &#x9;&#x9;&#xA;&#x9;&#x9;);&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#x9;SELECT&#x9;@volMinReal=VoltajeMinimo,@volMaxReal=VoltajeMaximo&#xA;&#x9;&#x9;FROM&#x9;PreguntaUno&#xA;&#x9;&#x9;WHERE&#x9;TipoBombillo=@bombilloReal;&#xA;   &#x9;SELECT&#x9;@volMinPropuesto=VoltajeMinimo,@volMaxPropuesto=VoltajeMaximo&#xA;&#x9;&#x9;FROM&#x9;PreguntaUno&#xA;&#x9;&#x9;WHERE&#x9;TipoBombillo=@bombilloPropuesto;&#xA;&#x9;&#x9;SELECT&#x9;@salida=CONCAT&#xA;&#x9;   &#x9;(&#xA;&#x9;   &#x9;&#x9;'El bombillo con serie ',&#xA;&#x9;   &#x9;&#x9;CONVERT(varchar, @serie),&#xA;&#x9;   &#x9;&#x9;' y voltaje Medido de ',&#xA;&#x9;   &#x9;&#x9;CONVERT(varchar, @voltaje),&#xA;&#x9;   &#x9;&#x9;' watts fue encontrado en la tabla con el tipo de bombillo (',&#xA;&#x9;   &#x9;&#x9;CONVERT(varchar, @bombilloReal),&#xA;&#x9;   &#x9;&#x9;'), el cual se ubica en el rango de ',&#xA;&#x9;   &#x9;&#x9;CONVERT(varchar, @volMinReal),&#xA;&#x9;   &#x9;&#x9;' watts hasta ',&#xA;&#x9;   &#x9;&#x9;CONVERT(varchar, @volMaxReal),&#xA;&#x9;   &#x9;&#x9;' watts; sin embargo, el tipo de bombillo propuesto es ',&#xA;&#x9;   &#x9;&#x9;CONVERT(varchar, @bombilloPropuesto),&#xA;&#x9;   &#x9;&#x9;'el cual se mueve en el rango de ',&#xA;&#x9;   &#x9;&#x9;CONVERT(varchar, @volMinPropuesto),&#xA;&#x9;   &#x9;&#x9;' watts hasta ',&#xA;&#x9;   &#x9;&#x9;CONVERT(varchar, @volMaxPropuesto),&#xA;&#x9;   &#x9;&#x9;' watts'&#x9;&#xA;&#x9;   &#x9;);&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@serie"
+            SQLTask:DtsVariableName="User::SerieBombillo"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@bombilloReal"
+            SQLTask:DtsVariableName="User::TipoBombilloReal"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@bombilloPropuesto"
+            SQLTask:DtsVariableName="User::TipoBombilloPropuesto"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@salida"
+            SQLTask:DtsVariableName="User::MensajeSalida"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@voltaje"
+            SQLTask:DtsVariableName="User::VoltajeMedido"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="8"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get Bombillo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{29D27AAB-DC20-49C0-8900-293CF0CC9D06}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Bombillo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5FF8F7CA-3BCE-4AA8-941E-B9466C0CB5AF}"
+          SQLTask:SqlStatementSource="IF EXISTS&#xA;(&#xA;&#x9;SELECT        TipoBombillo&#xA;&#x9;FROM            PreguntaUno&#xA;&#x9;WHERE        (VoltajeMinimo &lt;= @voltaje) AND (VoltajeMaximo &gt;= @voltaje)&#xA;) &#xA;BEGIN&#xA;   SELECT        @bombillo=TipoBombillo&#xA;&#x9;FROM            PreguntaUno&#xA;&#x9;WHERE        (VoltajeMinimo &lt;= @voltaje) AND (VoltajeMaximo &gt;= @voltaje)&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;   SELECT @error = CONCAT&#xA;   &#x9;(&#xA;   &#x9;&#x9;'El bombillo con serie ',&#xA;   &#x9;&#x9;CONVERT(varchar, @serie),&#xA;   &#x9;&#x9;' y voltaje Medido de ',&#xA;   &#x9;&#x9;CONVERT(varchar, @voltaje),&#xA;   &#x9;&#x9;',watts no corresponde a un tipo definido en el sistema'&#xA;   &#x9;),&#xA;   &#x9;@bombillo=0;&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@voltaje"
+            SQLTask:DtsVariableName="User::VoltajeMedido"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="8"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@bombillo"
+            SQLTask:DtsVariableName="User::TipoBombilloReal"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@error"
+            SQLTask:DtsVariableName="User::MensajeError"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@salida"
+            SQLTask:DtsVariableName="User::MensajeSalida"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@serie"
+            SQLTask:DtsVariableName="User::SerieBombillo"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Inserts"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C4A7927B-75BB-41A7-887F-F40910DA32A1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Inserts"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9DF8E3A7-EA49-4D94-AD3A-52D532B5042A}"
+          SQLTask:SqlStatementSource="INSERT INTO dbo.PreguntaUno&#xA;VALUES (35,'Bombillo de 35 watts',40.58,25.73);&#xA;INSERT INTO dbo.PreguntaUno&#xA;VALUES (110,'Bombillo de 110 watts',119.52,106.81);&#xA;INSERT INTO dbo.PreguntaUno&#xA;VALUES (17,'Bombillo de 17 watts',21.82,13.49);&#xA;INSERT INTO dbo.PreguntaUno&#xA;VALUES (65,'Bombillo de 65 watts',82.39,48.92 );" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\MensajeError"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{30D3C234-56FD-4EDC-9862-AEC9C5645AF5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="MensajeError"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9DF8E3A7-EA49-4D94-AD3A-52D532B5042A}"
+          SQLTask:SqlStatementSource="select 'Ocurrió un error al intentar conectarse con la base de datos'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::MensajeError" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{044F324F-191A-4D4F-8EA4-F70DC6DEFA03}"
+      DTS:From="Package\DropTable"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Crear Tabla" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A2FABFAA-6A86-4D0C-BDD8-CDF73CC6D969}"
+      DTS:From="Package\Crear Tabla"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Inserts" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{2AD23BC8-129F-4046-A7EA-3359387FF00D}"
+      DTS:From="Package\Inserts"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Get Bombillo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{A763B3A5-7F09-44F0-9EA0-0302E1E1B0BD}"
+      DTS:From="Package\DropTable"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\MensajeError"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{3BE48CF6-2531-4225-836B-E64046B0463C}"
+      DTS:From="Package\Get Bombillo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Execute SQL Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DropTable"
+          TopLeft="56,50" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Crear Tabla"
+          TopLeft="291,51" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="219,71.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="72,0"
+              Start="0,0"
+              End="64.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="64.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Inserts"
+          TopLeft="530,52" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="463,72.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="67,0"
+              Start="0,0"
+              End="59.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="59.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Get Bombillo"
+          TopLeft="536,140" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="608.5,94">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="141,42"
+          Id="Package\MensajeError"
+          TopLeft="246,150" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="137.5,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="179,58"
+              Start="0,0"
+              End="179,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
+                  <mssgle:LineSegment
+                    End="175,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="175,29"
+                    Point2="179,29"
+                    Point3="179,33" />
+                  <mssgle:LineSegment
+                    End="179,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="74.25865234375,34,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="522,227" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="604.5,182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
